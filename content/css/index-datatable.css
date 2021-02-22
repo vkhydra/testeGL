@@ -53,3 +53,22 @@ div.dataTables_wrapper div.dataTables_filter {
   background-color: transparent;
   color: var(--corp);
 }
+
+/*  */
+.dataTables_filter input:hover,
+.dataTables_filter input:focus {
+  background: var(--bg);
+  box-shadow: 0 0 2rem var(--clear);
+  color: var(--corp);
+}
+
+.dataTables_filter input {
+    background: var(--bg2);
+    border-radius: 50px;
+    height: 48px;
+    width: 350px !important;
+    color: var(--corp);
+    padding: 0px 20px;
+    padding-right: 40px;
+    border: none;
+    box-shadow: 2px 1px 0.2em var(--border);
