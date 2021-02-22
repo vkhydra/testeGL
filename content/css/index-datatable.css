@@ -31,6 +31,25 @@ div.dataTables_wrapper div.dataTables_filter {
 }
 
 .page-link {
+  color: var(--corp);
   background-color: transparent;
   border: none;
+}
+
+.page-item.active .page-link {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--clear);
+}
+
+.page-item.disabled .page-link {
+  color: var(--corp);
+  pointer-events: none;
+  cursor: auto;
+  background-color: transparent;
+}
+.page-link:hover {
+  text-decoration: none;
+  background-color: transparent;
+  color: var(--corp);
 }
