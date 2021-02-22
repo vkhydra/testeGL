@@ -1,19 +1,23 @@
- $(document).ready( function () {
-        $('table').DataTable(
-		  "ajax": "/content/data/dashboard.json",
-		  "columns": [
-		    "data": "locker",
-			"data": "cliente",
-			"data": "pedido",
-			"data": "telefone",
-			"data": "dataCriacao",
-			"data": "status"
-		  ],
-          "language": {
+$(document).ready( function () {
+    $('table').DataTable(
+        {
+            "ajax": "/content/data/dashboard.json",
+            "dom": 'ftip',
+            "pageLength": 7,
+            "lengthChange": false,
+            "columns": [
+                {"data": "locker"},
+                {"data": "cliente"},
+                {"data": "pedido"},
+                {"data": "telefone"},
+                {"data": "dataCriacao"},
+                {"data": "status"}
+            ],
+            "language": {
             "emptyTable": "Nenhum registro encontrado",
-            "info": "Mostrando de START até END de TOTAL registros",
+            "info": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
             "infoEmpty": "Mostrando 0 até 0 de 0 registros",
-            "infoFiltered": "(Filtrados de MAX registros)",
+            "infoFiltered": "(Filtrados de _MAX_ registros)",
             "infoThousands": ".",
             "loadingRecords": "Carregando...",
             "processing": "Processando...",
@@ -73,7 +77,7 @@
                 "fillHorizontal": "Preencher células horizontalmente",
                 "fillVertical": "Preencher células verticalmente"
             },
-            "lengthMenu": "Exibir MENU resultados por página",
+            "lengthMenu": "Exibir _MENU_ resultados por página",
             "searchBuilder": {
                 "add": "Adicionar Condição",
                 "button": {
@@ -139,5 +143,6 @@
             },
             "searchPlaceholder": "Digite um termo para pesquisar",
             "thousands": "."
-        } );
-      } );
+        }
+    });
+} );

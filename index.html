@@ -13,7 +13,80 @@
       crossorigin="anonymous"
     />
     <link href="/content/vendor/fontawesome/css/all.css" rel="stylesheet" />
+    <!--Datatables css-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/autofill/2.3.5/css/autoFill.bootstrap4.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.bootstrap4.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/colreorder/1.5.3/css/colReorder.bootstrap4.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/fixedcolumns/3.3.2/css/fixedColumns.bootstrap4.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/fixedheader/3.1.8/css/fixedHeader.bootstrap4.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/keytable/2.6.1/css/keyTable.bootstrap4.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.bootstrap4.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/rowgroup/1.1.2/css/rowGroup.bootstrap4.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/rowreorder/1.2.7/css/rowReorder.bootstrap4.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/scroller/2.0.3/css/scroller.bootstrap4.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/searchbuilder/1.0.1/css/searchBuilder.bootstrap4.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/searchpanes/1.2.2/css/searchPanes.bootstrap4.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/select/1.3.1/css/select.bootstrap4.min.css"
+    />
+    <!--Datatables css - Fim -->
     <link href="/content/css/site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/content/css/index-datatable.css" />
     <title>Teste1</title>
   </head>
   <body>
@@ -164,30 +237,26 @@
         <div class="row">
           <div id="data" class="col-12 loadingOff">
             <div class="geral">
-              <table
-                id="datatable"
-                class="table table-borderless no-footer dataTable"
-                style="width: 100%"
-                role="grid"
-                aria-describedby="datatable_info"
-              >
-                <thead class="top-table">
-                  <tr class="border rounded border-primary font_bold">
+              <table class="display" style="width: 100%">
+                <thead>
+                  <tr>
                     <th>Locker</th>
                     <th>Cliente</th>
                     <th>Pedido</th>
                     <th>Telefone</th>
-                    <th>Data de criação</th>
+                    <th>Data de Criação</th>
                     <th>Status</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <td class="odd">
-                    <tr></tr>
-                  </td>
-                  <td class="even">
-                    <tr></tr>
-                  </td>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -196,14 +265,19 @@
       </section>
     </main>
     <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
       crossorigin="anonymous"
+    ></script>
+    <!--Datatables - JS-->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"
     ></script>
     <script
       type="text/javascript"
@@ -215,152 +289,101 @@
     ></script>
     <script
       type="text/javascript"
-      src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.23/af-2.3.5/b-1.6.5/b-colvis-1.6.5/b-flash-1.6.5/b-html5-1.6.5/b-print-1.6.5/cr-1.5.3/fc-3.3.2/fh-3.1.8/kt-2.6.1/r-2.2.7/rg-1.1.2/rr-1.2.7/sc-2.0.3/sb-1.0.1/sp-1.2.2/sl-1.3.1/datatables.min.js"
+      src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"
     ></script>
-    <script>
-         $(document).ready( function () {
-           $('table').DataTable(
-       "ajax": "/content/data/dashboard.json",
-       "columns": [
-         "data": "locker",
-      "data": "cliente",
-      "data": "pedido",
-      "data": "telefone",
-      "data": "dataCriacao",
-      "data": "status"
-       ],
-             "language": {
-               "emptyTable": "Nenhum registro encontrado",
-               "info": "Mostrando de START até END de TOTAL registros",
-               "infoEmpty": "Mostrando 0 até 0 de 0 registros",
-               "infoFiltered": "(Filtrados de MAX registros)",
-               "infoThousands": ".",
-               "loadingRecords": "Carregando...",
-               "processing": "Processando...",
-               "zeroRecords": "Nenhum registro encontrado",
-               "search": "Pesquisar",
-               "paginate": {
-                   "next": "Próximo",
-                   "previous": "Anterior",
-                   "first": "Primeiro",
-                   "last": "Último"
-               },
-               "aria": {
-                   "sortAscending": ": Ordenar colunas de forma ascendente",
-                   "sortDescending": ": Ordenar colunas de forma descendente"
-               },
-               "select": {
-                   "rows": {
-                       "_": "Selecionado %d linhas",
-                       "0": "Nenhuma linha selecionada",
-                       "1": "Selecionado 1 linha"
-                   },
-                   "1": "%d linha selecionada",
-                   "_": "%d linhas selecionadas",
-                   "cells": {
-                       "1": "1 célula selecionada",
-                       "_": "%d células selecionadas"
-                   },
-                   "columns": {
-                       "1": "1 coluna selecionada",
-                       "_": "%d colunas selecionadas"
-                   }
-               },
-               "buttons": {
-                   "copySuccess": {
-                       "1": "Uma linha copiada com sucesso",
-                       "_": "%d linhas copiadas com sucesso"
-                   },
-                   "collection": "Coleção  <span class=\"ui-button-icon-primary ui-icon ui-icon-triangle-1-s\"><\/span>",
-                   "colvis": "Visibilidade da Coluna",
-                   "colvisRestore": "Restaurar Visibilidade",
-                   "copy": "Copiar",
-                   "copyKeys": "Pressione ctrl ou u2318 + C para copiar os dados da tabela para a área de transferência do sistema. Para cancelar, clique nesta mensagem ou pressione Esc..",
-                   "copyTitle": "Copiar para a Área de Transferência",
-                   "csv": "CSV",
-                   "excel": "Excel",
-                   "pageLength": {
-                       "-1": "Mostrar todos os registros",
-                       "1": "Mostrar 1 registro",
-                       "_": "Mostrar %d registros"
-                   },
-                   "pdf": "PDF",
-                   "print": "Imprimir"
-               },
-               "autoFill": {
-                   "cancel": "Cancelar",
-                   "fill": "Preencher todas as células com",
-                   "fillHorizontal": "Preencher células horizontalmente",
-                   "fillVertical": "Preencher células verticalmente"
-               },
-               "lengthMenu": "Exibir MENU resultados por página",
-               "searchBuilder": {
-                   "add": "Adicionar Condição",
-                   "button": {
-                       "0": "Construtor de Pesquisa",
-                       "_": "Construtor de Pesquisa (%d)"
-                   },
-                   "clearAll": "Limpar Tudo",
-                   "condition": "Condição",
-                   "conditions": {
-                       "date": {
-                           "after": "Depois",
-                           "before": "Antes",
-                           "between": "Entre",
-                           "empty": "Vazio",
-                           "equals": "Igual",
-                           "not": "Não",
-                           "notBetween": "Não Entre",
-                           "notEmpty": "Não Vazio"
-                       },
-                       "number": {
-                           "between": "Entre",
-                           "empty": "Vazio",
-                           "equals": "Igual",
-                           "gt": "Maior Que",
-                           "gte": "Maior ou Igual a",
-                           "lt": "Menor Que",
-                           "lte": "Menor ou Igual a",
-                           "not": "Não",
-                           "notBetween": "Não Entre",
-                           "notEmpty": "Não Vazio"
-                       },
-                       "string": {
-                           "contains": "Contém",
-                           "empty": "Vazio",
-                           "endsWith": "Termina Com",
-                           "equals": "Igual",
-                           "not": "Não",
-                           "notEmpty": "Não Vazio",
-                           "startsWith": "Começa Com"
-                       }
-                   },
-                   "data": "Data",
-                   "deleteTitle": "Excluir regra de filtragem",
-                   "logicAnd": "E",
-                   "logicOr": "Ou",
-                   "title": {
-                       "0": "Construtor de Pesquisa",
-                       "_": "Construtor de Pesquisa (%d)"
-                   },
-                   "value": "Valor"
-               },
-               "searchPanes": {
-                   "clearMessage": "Limpar Tudo",
-                   "collapse": {
-                       "0": "Painéis de Pesquisa",
-                       "_": "Painéis de Pesquisa (%d)"
-                   },
-                   "count": "{total}",
-                   "countFiltered": "{shown} ({total})",
-                   "emptyPanes": "Nenhum Painel de Pesquisa",
-                   "loadMessage": "Carregando Painéis de Pesquisa...",
-                   "title": "Filtros Ativos"
-               },
-               "searchPlaceholder": "Digite um termo para pesquisar",
-               "thousands": "."
-           } );
-         } );
-    </script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/autofill/2.3.5/js/dataTables.autoFill.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/autofill/2.3.5/js/autoFill.bootstrap4.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.bootstrap4.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.colVis.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.flash.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.print.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/colreorder/1.5.3/js/dataTables.colReorder.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/fixedcolumns/3.3.2/js/dataTables.fixedColumns.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/fixedheader/3.1.8/js/dataTables.fixedHeader.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/keytable/2.6.1/js/dataTables.keyTable.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/responsive/2.2.7/js/dataTables.responsive.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/responsive/2.2.7/js/responsive.bootstrap4.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/rowgroup/1.1.2/js/dataTables.rowGroup.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/rowreorder/1.2.7/js/dataTables.rowReorder.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/scroller/2.0.3/js/dataTables.scroller.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/searchbuilder/1.0.1/js/dataTables.searchBuilder.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/searchbuilder/1.0.1/js/searchBuilder.bootstrap4.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/searchpanes/1.2.2/js/dataTables.searchPanes.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/searchpanes/1.2.2/js/searchPanes.bootstrap4.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"
+    ></script>
+    <!--Datatables - JS - Fim-->
+    <script src="/content/js/index.js"></script>
   </body>
 </html>

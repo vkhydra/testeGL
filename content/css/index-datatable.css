@@ -1,0 +1,36 @@
+:root {
+  --corp: #9bcdd7;
+  --corp2: #d34544;
+  --bg: #242424;
+  --bg2: #121212;
+  --clear: #e3dbc8;
+  --border: rgba(0, 0, 0, 0.3);
+}
+
+table {
+  color: var(--corp);
+}
+
+td,
+th {
+  text-align: center;
+  padding: 15px;
+  font-size: 1.15rem;
+}
+
+.odd {
+  background-color: var(--bg2);
+}
+
+.even {
+  background-color: var(--bg);
+}
+
+div.dataTables_wrapper div.dataTables_filter {
+  text-align: left;
+}
+
+.page-link {
+  background-color: transparent;
+  border: none;
+}
