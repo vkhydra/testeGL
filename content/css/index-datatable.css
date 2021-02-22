@@ -63,12 +63,25 @@ div.dataTables_wrapper div.dataTables_filter {
 }
 
 .dataTables_filter input {
-    background: var(--bg2);
-    border-radius: 50px;
-    height: 48px;
-    width: 350px !important;
-    color: var(--corp);
-    padding: 0px 20px;
-    padding-right: 40px;
-    border: none;
-    box-shadow: 2px 1px 0.2em var(--border);
+  background: var(--bg2);
+  border-radius: 50px;
+  height: 48px;
+  width: 350px !important;
+  color: var(--corp);
+  padding: 0px 20px;
+  padding-right: 40px;
+  border: none;
+  box-shadow: 2px 1px 0.2em var(--border);
+}
+
+.dataTables_filter label:after {
+  content: "";
+  display: block;
+  background-image: url(../img/download.png);
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 22px;
+  left: 330px;
+  top: 13px;
+  position: absolute;
+}
